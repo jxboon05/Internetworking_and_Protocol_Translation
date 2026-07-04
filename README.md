@@ -55,24 +55,31 @@ Upon entering the NAT64 translation boundary, headers are completely stripped, c
 
 ---
 
-## ⚙️ Core Router Configurations
+## 💻 Endpoint Node Configurations
 
-### R1 NAT-PT Engine Script
-```cisco
-ipv6 unicast-routing
-!
-interface FastEthernet0/0
- ip address 192.168.1.254 255.255.255.0
- ipv6 nat
- no shutdown
-!
-interface FastEthernet0/1
- ipv6 address 2000::1000/64
- ipv6 nat
- no shutdown
-!
-ipv6 nat prefix 2001::/96
-ipv6 nat v4v6 source 192.168.1.1 2001::1
-ipv6 nat v4v6 source 192.168.1.2 2001::2
-ipv6 nat v6v4 source 2000::1 192.168.2.1
-ipv6 nat v6v4 source 2000::2 192.168.2.2
+### Network Scenario 1: DHCP Clients
+[cite_start]Endpoints in this branch were configured to use dynamic addressing[cite: 7, 276]. [cite_start]Using the **DORA process**, they broadcast discovery frames to locate an operational assignment server across the gateway boundaries[cite: 90].
+
+* [cite_start]**PC0, PC1, PC2 addressing:** Dynamic (DHCP Assigned) [cite: 7, 14, 88]
+* [cite_start]**Assigned Subnet Mask:** `255.255.255.0` [cite: 14, 66]
+* [cite_start]**Default Gateway:** `192.168.1.254` [cite: 14, 66]
+
+---
+
+### Network Scenario 2: Dual-Stack Endpoints (GNS3)
+[cite_start]The QEMU Microcore Linux nodes were configured using native shell commands to establish static IP paths toward their respective interfaces on Router R1[cite: 116, 118, 131].
+
+| Device Node | IP Protocol | Static IP Address | Subnet / Prefix | Default Gateway |
+| :--- | :--- | :--- | :--- | :--- |
+| **PC1** | IPv4 | `192.168.1.1` | `/24` | `192.168.1.254` |
+| **PC2** | IPv4 | `192.168.1.2` | `/24` | `192.168.1.254` |
+| **PC3** | IPv6 | `2000::1` | `/64` | `2000::1000` |
+| **PC4** | IPv6 | `2000::2` | `/64` | `2000::1000` |
+
+#### Linux Terminal Configuration Reference (QEMU Nodes)
+[cite_start]To document your hands-on Linux administration skills, the endpoints were brought online using the following standard shell parameters[cite: 118]:
+
+* **IPv4 Nodes (PC1/PC2):**
+  ```bash
+  sudo ifconfig eth0 192.168.1.1 netmask 255.255.255.0 up
+  sudo route add default gw 192.168.1.254
