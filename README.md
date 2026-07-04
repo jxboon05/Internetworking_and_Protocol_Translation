@@ -167,6 +167,14 @@ Upon processing by the NAT64 engine, the IPv4 headers are completely stripped, c
 
 ---
 
+# Documentation
+
+A detailed technical report describing the implementation, router configurations, protocol analysis, and experimental results is available in:
+
+`report/Advanced_Internetworking_Report.pdf`
+
+---
+
 # Future Improvements
 
 - Dynamic Routing (OSPF)
