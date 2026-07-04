@@ -14,6 +14,9 @@ A comprehensive network engineering project focused on multi-protocol routing, e
 
 ### Part 1: Cross-Subnet DHCP Relay & PAT Validation
 * **Objective:** Establish a secure enterprise edge where multiple internal private endpoints automatically obtain dynamic IP assignments from a centralized DHCP architecture hosted across an offsite branch.
+
+![Network Topology](topology_diagram1.png)
+
 * **Key Implementation Details:**
   * Configured **Port Address Translation (PAT / NAT Overload)** allowing internal subnets (`192.168.1.0/24` and `192.168.2.0/24`) to safely route out via shared public IP interfaces.
   * Deployed Cisco **DHCP Relay Agents (`ip helper-address`)** on the local gateway to convert layer 2 configuration broadcasts into layer 3 unicast streams, mapping data securely to the remote server.
@@ -22,7 +25,7 @@ A comprehensive network engineering project focused on multi-protocol routing, e
 ### Part 2: Dual-Stack Infrastructure via Static NAT-PT
 * **Objective:** Enable seamless, transparent bidirectional communication between an legacy IPv4-only Local Area Network and a modern IPv6-only infrastructure.
 
-![Network Topology](topology_diagram.png)
+![Network Topology](topology_diagram2.png)
 
 * **Addressing Matrix & Fixed Translations:**
   * **IPv4 Subnet:** `192.168.1.0/24` (Gateway: `192.168.1.254`)
