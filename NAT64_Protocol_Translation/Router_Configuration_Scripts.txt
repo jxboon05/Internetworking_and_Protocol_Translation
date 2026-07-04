@@ -1,0 +1,21 @@
+#Router
+R1#conf t
+R1(config)#ipv6 unicast-routing
+R1(config)#int fa0/0
+R1(config-if)#ip address 192.168.1.254 255.255.255.0
+R1(config-if)#ipv6 nat
+R1(config-if)#no shut
+R1(config-if)#exit
+
+R1(config)#int fa0/1
+R1(config-if)#ipv6 address 2000::1000/64
+R1(config-if)#ipv6 nat
+R1(config-if)#no shut
+R1(config-if)#exit
+
+R1(config)#ipv6 nat prefix 2001::/96
+R1(config)#ipv6 nat v4v6 source 192.168.1.1 2001::1
+R1(config)#ipv6 nat v4v6 source 192.168.1.2 2001::2
+R1(config)#ipv6 nat v6v4 source 2000::1 192.168.2.1
+R1(config)#ipv6 nat v6v4 source 2000::2 192.168.2.2
+R1#show ipv6 nat translation

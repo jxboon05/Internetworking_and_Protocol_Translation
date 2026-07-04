@@ -1,0 +1,57 @@
+#Router0
+
+Router>en
+Router#conf t
+Router(config)#int fa0/0
+Router(config-if)#ip address 192.168.1.254 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#exit
+
+Router(config)#int fa0/1
+Router(config-if)#ip address 201.1.1.1 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#exit
+
+Router(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)#int fa0/0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+
+Router(config)#int fa0/1
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#ip nat inside source list 1 interface fa0/1 overload
+
+Router(config)#ip route 0.0.0.0 0.0.0.0 201.1.1.2
+
+Router(config)#int fa0/0
+Router(config-if)#ip helper-address 201.1.1.2
+
+
+#Router 1
+
+Router>en
+Router#conf t
+Router(config)#int fa0/0
+Router(config-if)#ip address 192.168.2.254 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#no shut
+
+Router(config)#int fa0/1
+Router(config-if)#ip address 201.1.1.2 255.255.255.0
+Router(config-if)#no shut
+Router(config-if)#exit
+
+Router(config)#access-list 1 permit 192.168.2.0 0.0.0.255
+Router(config)#int fa0/0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+
+Router(config)#int fa0/1
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#ip nat inside source list 1 int fa0/1 overload
+
+Router(config)#ip nat inside source static udp 192.168.2.1 67 201.1.1.2 67
+
+Router(config)#ip route 0.0.0.0 0.0.0.0 201.1.1.1
