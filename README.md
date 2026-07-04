@@ -76,15 +76,16 @@ Configure an enterprise network where clients automatically obtain IP addresses 
 
 ---
 
-### Validation
+## Validation Results
 
-✔ DHCP clients successfully obtained IP addresses
-
-✔ DHCP Relay forwarded requests across different subnets
-
-✔ PAT enabled outbound connectivity
-
-✔ Routing between enterprise networks verified
+| Test | Status |
+|------|--------|
+| DHCP Relay | ✅ Passed |
+| DHCP Address Assignment | ✅ Passed |
+| PAT Translation | ✅ Passed |
+| IPv4 → IPv6 Translation | ✅ Passed |
+| IPv6 → IPv4 Translation | ✅ Passed |
+| Wireshark Verification | ✅ Passed |
 
 ---
 
@@ -152,16 +153,26 @@ Upon processing by the NAT64 engine, the IPv4 headers are completely stripped, c
 
 ---
 
-## Skills Demonstrated
+## Technical Skills Demonstrated
+
+### Networking
 
 - Enterprise Network Design
-- Cisco Router Configuration
-- DHCP Relay Deployment
-- Port Address Translation (PAT)
-- Static NAT-PT
 - IPv4 & IPv6 Networking
-- Linux Network Configuration
 - Static Routing
+
+### Cisco Technologies
+
+- DHCP Relay
+- PAT
+- NAT-PT
+
+### System Administration
+
+- Linux Network Configuration
+
+### Analysis
+
 - Wireshark Packet Analysis
 - Network Troubleshooting
 
