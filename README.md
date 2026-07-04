@@ -110,7 +110,7 @@ Enable communication between an IPv4-only network and an IPv6-only network using
 | **IPv6 → IPv4** | ICMPv6 pings from native IPv6 hosts (e.g., PC3) successfully reach IPv4 hosts. | ✅ Passed |
 | **NAT-PT Mapping** | Static bindings correctly translate the `192.168.2.x` network to the `2000::x` network and vice-versa. | ✅ Passed |
 
-#### 🔍 Protocol Analysis Evidence (Wireshark)
+### 🔍 Protocol Analysis Evidence (Wireshark)
 To verify that the NAT-PT engine is correctly translating the traffic, packets were captured at the boundary router (R1) during an ICMP ping from PC1 to PC3.
 
 **A. Native IPv4 LAN Segment (PC1 ↔ R1)**
