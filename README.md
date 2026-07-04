@@ -1,85 +1,77 @@
-# Advanced Internetworking: DHCP Relay & NAT-PT Protocol Translation
+# Advanced Internetworking: DHCP Relay & NAT-PT Protocol Translation 🌐🔄
 
 A networking project demonstrating enterprise DHCP Relay deployment, Port Address Translation (PAT), and IPv4-to-IPv6 protocol translation (NAT-PT). The project was implemented using Cisco Packet Tracer and GNS3 to simulate real-world enterprise networking scenarios.
 
 ---
 
-## Project Overview
+## 📌 Project Overview
 
 This project consists of two networking implementations:
 
-- **Part 1:** Enterprise DHCP Relay and PAT configuration using Cisco Packet Tracer.
-- **Part 2:** IPv4-to-IPv6 communication using Static NAT-PT in GNS3.
+* **Part 1:** Enterprise DHCP Relay and PAT configuration using Cisco Packet Tracer.
+* **Part 2:** IPv4-to-IPv6 communication using Static NAT-PT in GNS3.
 
 The project demonstrates practical knowledge of enterprise routing, dynamic IP allocation, IPv4/IPv6 interoperability, Linux networking, and packet analysis using Wireshark.
 
 ---
 
-## Technologies & Tools
+## 🛠️ Technologies & Tools
 
-### Network Simulation
-- Cisco Packet Tracer
-- GNS3
+### 🖥️ Network Simulation
+* Cisco Packet Tracer
+* GNS3
 
-### Operating Systems
-- Cisco IOS
-- QEMU Microcore Linux
+### 🐧 Operating Systems
+* Cisco IOS
+* QEMU Microcore Linux
 
-### Networking Protocols
-- DHCP Relay (`ip helper-address`)
-- DHCP
-- Port Address Translation (PAT)
-- Static NAT-PT
-- IPv4
-- IPv6
-- ICMP / ICMPv6
-- Static Routing
+### 📡 Networking Protocols
+* DHCP Relay (`ip helper-address`)
+* DHCP
+* Port Address Translation (PAT)
+* Static NAT-PT
+* IPv4 & IPv6
+* ICMP / ICMPv6
+* Static Routing
 
-### Packet Analysis
-- Wireshark
+### 🔎 Packet Analysis
+* Wireshark
 
 ---
 
-## Part 1 – Cisco Packet Tracer
+## ⚙️ Part 1 – Cisco Packet Tracer
 
-### Objective
-
+### 🎯 Objective
 Configure an enterprise network where clients automatically obtain IP addresses from a remote DHCP server located on another subnet through DHCP Relay.
 
-### Network Topology
-
+### 🗺️ Network Topology
 ![Cisco Packet Tracer Topology](assets/cisco_topology.png)
 
----
+### ✨ Features Implemented
+* DHCP Relay (`ip helper-address`)
+* Remote DHCP Server
+* Port Address Translation (PAT)
+* Static Routing
+* Multi-router enterprise topology
+* DHCP DORA process validation
 
-### Features Implemented
-
-- DHCP Relay (`ip helper-address`)
-- Remote DHCP Server
-- Port Address Translation (PAT)
-- Static Routing
-- Multi-router enterprise topology
-- DHCP DORA process validation
-
----
-
-### Device Configuration
+### 💻 Device Configuration
 
 | Device | Configuration |
-|---------|---------------|
-| PC0 | DHCP Client |
-| PC1 | DHCP Client |
-| PC2 | DHCP Client |
-| Router0 | DHCP Relay, PAT |
-| Router1 | PAT |
-| Server0 | DHCP Server |
+| :--- | :--- |
+| **PC0** | DHCP Client |
+| **PC1** | DHCP Client |
+| **PC2** | DHCP Client |
+| **Router0** | DHCP Relay, PAT |
+| **Router1** | PAT |
+| **Server0** | DHCP Server |
 
 ---
 
-## Validation Results
+## 📊 Validation Results
 
 | Test | Status |
-|------|--------|
+| :--- | :--- |
 | DHCP Relay | ✅ Passed |
 | DHCP Address Assignment | ✅ Passed |
 | PAT Translation | ✅ Passed |
@@ -89,30 +81,23 @@ Configure an enterprise network where clients automatically obtain IP addresses 
 
 ---
 
-## Part 2 – GNS3
+## 🔧 Part 2 – GNS3
 
-### Objective
-
+### 🎯 Objective
 Enable communication between an IPv4-only network and an IPv6-only network using Static NAT-PT.
 
-### Network Topology
-
+### 🗺️ Network Topology
 ![GNS3 Topology](assets/gns3_topology.png)
 
----
+### ✨ Features Implemented
+* Static NAT-PT
+* IPv4 ↔ IPv6 Translation
+* Dual-stack Router
+* Linux Network Configuration
+* Wireshark Packet Analysis
+* ICMP / ICMPv6 Validation
 
-### Features Implemented
-
-- Static NAT-PT
-- IPv4 ↔ IPv6 Translation
-- Dual-stack Router
-- Linux Network Configuration
-- Wireshark Packet Analysis
-- ICMP / ICMPv6 Validation
-
----
-
-### Device Configuration
+### 💻 Device Configuration
 
 | Device | Native Address | Target Translated Mapping | Default Gateway |
 | :--- | :--- | :--- | :--- |
@@ -121,23 +106,16 @@ Enable communication between an IPv4-only network and an IPv6-only network using
 | **PC3** | `2000::1/64` | `192.168.2.1` | `2000::1000` |
 | **PC4** | `2000::2/64` | `192.168.2.2` | `2000::1000` |
 
----
-
-### Validation
-
-✔ IPv4 hosts successfully communicated with IPv6 hosts
-
-✔ IPv6 hosts successfully communicated with IPv4 hosts
-
-✔ Static NAT-PT mappings verified
-
-✔ ICMP packet translation confirmed
-
-✔ Packet translation analysed using Wireshark
+### ✅ Validation
+* ✔ IPv4 hosts successfully communicated with IPv6 hosts
+* ✔ IPv6 hosts successfully communicated with IPv4 hosts
+* ✔ Static NAT-PT mappings verified
+* ✔ ICMP packet translation confirmed
+* ✔ Packet translation analysed using Wireshark
 
 ---
 
-### Protocol Analysis & Header Translation Evidence
+## 🔍 Protocol Analysis & Header Translation Evidence
 
 ### A. Native IPv4 LAN Segment (PC1 ↔ R1)
 Before reaching the translation boundary engine on the gateway router, packets traversing the local link segment remain entirely inside native IPv4 encapsulations.
@@ -153,53 +131,33 @@ Upon processing by the NAT64 engine, the IPv4 headers are completely stripped, c
 
 ---
 
-## Technical Skills Demonstrated
+## 💡 Technical Skills Demonstrated
 
-### Networking
-
-- Enterprise Network Design
-- IPv4 & IPv6 Networking
-- Static Routing
-
-### Cisco Technologies
-
-- DHCP Relay
-- PAT
-- NAT-PT
-
-### System Administration
-
-- Linux Network Configuration
-
-### Analysis
-
-- Wireshark Packet Analysis
-- Network Troubleshooting
+* **Networking:** Enterprise Network Design, IPv4 & IPv6 Networking, Static Routing
+* **Cisco Technologies:** DHCP Relay, PAT, NAT-PT
+* **System Administration:** Linux Network Configuration
+* **Analysis:** Wireshark Packet Analysis, Network Troubleshooting
 
 ---
 
-## Documentation
+## 📂 Documentation
 
 A detailed technical report describing the implementation, router configurations, protocol analysis, and experimental results is available in:
-
-[Advanced Internetworking Report](report/Advanced_Internetworking_Report.pdf)
-
----
-
-## Future Improvements
-
-- Dynamic Routing (OSPF)
-- DHCPv6
-- IPv6 ACLs
-- Firewall Security Policies
-- High Availability (HSRP)
+* [📥 Advanced Internetworking Report (PDF)](report/Advanced_Internetworking_Report.pdf)
 
 ---
 
-## Author
+## 🚀 Future Improvements
 
-**Boon Jia Xuan**
+* Dynamic Routing (OSPF)
+* DHCPv6
+* IPv6 ACLs
+* Firewall Security Policies
+* High Availability (HSRP)
 
-Bachelor of Computer Science (Honours)
+---
 
+## 🧑‍💻 Author
+
+**Boon Jia Xuan** Bachelor of Computer Science (Honours)  
 Universiti Tunku Abdul Rahman (UTAR)
