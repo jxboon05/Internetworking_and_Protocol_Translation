@@ -35,36 +35,7 @@ A networking project demonstrating enterprise DHCP Relay deployment, Port Addres
 
 ## Network Topology
 
-![Network Topology](assets/topology_diagram.png)
-
----
-
-## Project Structure
-
-```
-Advanced-Internetworking/
-│
-├── PacketTracer/
-│   └── DHCP_Relay.pkt
-│
-├── GNS3/
-│   └── NAT_PT_Project.gns3
-│
-├── configs/
-│   ├── R1.txt
-│   ├── R2.txt
-│   └── ...
-│
-├── assets/
-│   ├── topology_diagram.png
-│   ├── packet_capture.png
-│   └── dhcp_test.png
-│
-├── report/
-│   └── Assignment_Report.pdf
-│
-└── README.md
-```
+![Network Topology](assets/topology_diagram1.png)
 
 ---
 
@@ -77,16 +48,6 @@ Advanced-Internetworking/
 - Dual-stack networking
 - Linux network configuration
 - Wireshark packet analysis
-
----
-
-## How to Run
-
-1. Open the Packet Tracer project using Cisco Packet Tracer.
-2. Open the GNS3 project using GNS3.
-3. Start all routers and QEMU hosts.
-4. Perform connectivity tests using `ping`.
-5. Verify packet translation using Wireshark.
 
 ---
 
