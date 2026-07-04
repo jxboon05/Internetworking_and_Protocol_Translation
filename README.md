@@ -101,7 +101,7 @@ Enable communication between an IPv4-only network and an IPv6-only network using
 | **PC3** | `2000::1/64` | `192.168.2.1` | `2000::1000` |
 | **PC4** | `2000::2/64` | `192.168.2.2` | `2000::1000` |
 
-### ✅ Validation
+### 📊 Validation & Protocol Analysis
 
 #### ✅ Connectivity Testing
 | Test Case | Description | Status |
