@@ -51,10 +51,10 @@ Enable seamless, transparent bidirectional communication between a legacy IPv4-o
 | **PC4 (IPv6)** | `2000::2` | `192.168.2.2` | IPv4 LAN |
 
 ### 3. Endpoint Node Configurations
-[cite_start]The QEMU Microcore Linux nodes were configured using native shell commands to establish static IP paths toward their respective interfaces on Router R1.
+The QEMU Microcore Linux nodes were configured using native shell commands to establish static IP paths toward their respective interfaces on Router R1.
 
 #### Linux Terminal Configuration Reference (QEMU Nodes)
-[cite_start]To document operational hands-on Linux system administration skills, endpoints were brought online using the following standard shell parameters:
+To document operational hands-on Linux system administration skills, endpoints were brought online using the following standard shell parameters:
 
 * **IPv4 Nodes (PC1 & PC2 examples):**
   ```bash
