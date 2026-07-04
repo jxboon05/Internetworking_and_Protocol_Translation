@@ -22,7 +22,7 @@ A comprehensive network engineering project focused on multi-protocol routing, e
 ### Part 2: Dual-Stack Infrastructure via Static NAT-PT
 * **Objective:** Enable seamless, transparent bidirectional communication between an legacy IPv4-only Local Area Network and a modern IPv6-only infrastructure.
 
-![Network Topology](assets/topology_diagram.png)
+![Network Topology](topology_diagram.png)
 
 * **Addressing Matrix & Fixed Translations:**
   * **IPv4 Subnet:** `192.168.1.0/24` (Gateway: `192.168.1.254`)
