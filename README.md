@@ -123,20 +123,6 @@ Upon processing by the NAT-PT engine, the IPv4 headers are completely stripped, 
 * **Capture:** ![IPv6 Packet Capture](assets/wireshark_ipv6.png)
 * **Header Details:** The packet now displays a restructured Internet Protocol Version 6 header. The Source is translated to `2001::1` (the mapped IPv6 representation of PC1), routing straight to the native Destination address `2000::1` (PC3).
 
-### 🔍 Protocol Analysis & Header Translation Evidence
-
-### A. Native IPv4 LAN Segment (PC1 ↔ R1)
-Before reaching the translation boundary engine on the gateway router, packets traversing the local link segment remain entirely inside native IPv4 encapsulations.
-
-![IPv4 Packet Capture](assets/wireshark_ipv4.png)
-* **Observed Format:** Native Internet Protocol Version 4 header showing Source `192.168.1.1` routing toward destination `192.168.2.1` (the mapped representation of PC3).
-
-### B. Translated IPv6 Segment Core (R1 ↔ PC3)
-Upon processing by the NAT64 engine, the IPv4 headers are completely stripped, converted, and restructured into an IPv6 frame format for delivery across the disparate link.
-
-![IPv6 Packet Capture](assets/wireshark_ipv6.png)
-* **Observed Format:** Restructured Internet Protocol Version 6 header showing the translated Source representation `2001::1` delivery tracking straight to native destination address `2000::1`.
-
 ---
 
 ## 💡 Technical Skills Demonstrated
