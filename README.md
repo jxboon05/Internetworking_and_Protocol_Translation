@@ -15,7 +15,7 @@ The project demonstrates practical knowledge of enterprise routing, dynamic IP a
 
 ---
 
-# Technologies & Tools
+## Technologies & Tools
 
 ### Network Simulation
 - Cisco Packet Tracer
@@ -40,19 +40,19 @@ The project demonstrates practical knowledge of enterprise routing, dynamic IP a
 
 ---
 
-# Part 1 – Cisco Packet Tracer
+## Part 1 – Cisco Packet Tracer
 
-## Objective
+### Objective
 
 Configure an enterprise network where clients automatically obtain IP addresses from a remote DHCP server located on another subnet through DHCP Relay.
 
-## Network Topology
+### Network Topology
 
 ![Cisco Packet Tracer Topology](assets/cisco_topology.png)
 
 ---
 
-## Features Implemented
+### Features Implemented
 
 - DHCP Relay (`ip helper-address`)
 - Remote DHCP Server
@@ -63,7 +63,7 @@ Configure an enterprise network where clients automatically obtain IP addresses 
 
 ---
 
-## Device Configuration
+### Device Configuration
 
 | Device | Configuration |
 |---------|---------------|
@@ -76,7 +76,7 @@ Configure an enterprise network where clients automatically obtain IP addresses 
 
 ---
 
-## Validation
+### Validation
 
 ✔ DHCP clients successfully obtained IP addresses
 
@@ -88,19 +88,19 @@ Configure an enterprise network where clients automatically obtain IP addresses 
 
 ---
 
-# Part 2 – GNS3
+## Part 2 – GNS3
 
-## Objective
+### Objective
 
 Enable communication between an IPv4-only network and an IPv6-only network using Static NAT-PT.
 
-## Network Topology
+### Network Topology
 
 ![GNS3 Topology](assets/gns3_topology.png)
 
 ---
 
-## Features Implemented
+### Features Implemented
 
 - Static NAT-PT
 - IPv4 ↔ IPv6 Translation
@@ -111,7 +111,7 @@ Enable communication between an IPv4-only network and an IPv6-only network using
 
 ---
 
-## Device Configuration
+### Device Configuration
 
 | Device | Native Address | Target Translated Mapping | Default Gateway |
 | :--- | :--- | :--- | :--- |
@@ -122,7 +122,7 @@ Enable communication between an IPv4-only network and an IPv6-only network using
 
 ---
 
-## Validation
+### Validation
 
 ✔ IPv4 hosts successfully communicated with IPv6 hosts
 
@@ -136,7 +136,7 @@ Enable communication between an IPv4-only network and an IPv6-only network using
 
 ---
 
-## Protocol Analysis & Header Translation Evidence
+### Protocol Analysis & Header Translation Evidence
 
 ### A. Native IPv4 LAN Segment (PC1 ↔ R1)
 Before reaching the translation boundary engine on the gateway router, packets traversing the local link segment remain entirely inside native IPv4 encapsulations.
@@ -152,7 +152,7 @@ Upon processing by the NAT64 engine, the IPv4 headers are completely stripped, c
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
 - Enterprise Network Design
 - Cisco Router Configuration
@@ -167,7 +167,7 @@ Upon processing by the NAT64 engine, the IPv4 headers are completely stripped, c
 
 ---
 
-# Documentation
+## Documentation
 
 A detailed technical report describing the implementation, router configurations, protocol analysis, and experimental results is available in:
 
@@ -175,7 +175,7 @@ A detailed technical report describing the implementation, router configurations
 
 ---
 
-# Future Improvements
+## Future Improvements
 
 - Dynamic Routing (OSPF)
 - DHCPv6
@@ -185,7 +185,7 @@ A detailed technical report describing the implementation, router configurations
 
 ---
 
-# Author
+## Author
 
 **Boon Jia Xuan**
 
