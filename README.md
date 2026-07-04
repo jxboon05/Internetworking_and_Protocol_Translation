@@ -151,7 +151,7 @@ A detailed technical report describing the implementation, router configurations
 
 ---
 
-## 🧑‍💻 Author
+## 👤 Author
 
 **Boon Jia Xuan** Bachelor of Computer Science (Honours)  
 Universiti Tunku Abdul Rahman (UTAR)
