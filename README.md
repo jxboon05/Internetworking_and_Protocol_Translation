@@ -66,8 +66,6 @@ Configure an enterprise network where clients automatically obtain IP addresses 
 | **Router1** | PAT |
 | **Server0** | DHCP Server |
 
----
-
 ### 📊 Validation Results
 
 | Test Case | Description | Status |
@@ -124,8 +122,6 @@ Before reaching the translation engine on the gateway router, packets traversing
 Upon processing by the NAT-PT engine, the IPv4 headers are completely stripped, converted, and restructured into an IPv6 frame format for delivery across the disparate link.
 * **Capture:** ![IPv6 Packet Capture](assets/wireshark_ipv6.png)
 * **Header Details:** The packet now displays a restructured Internet Protocol Version 6 header. The Source is translated to `2001::1` (the mapped IPv6 representation of PC1), routing straight to the native Destination address `2000::1` (PC3).
-
----
 
 ### 🔍 Protocol Analysis & Header Translation Evidence
 
