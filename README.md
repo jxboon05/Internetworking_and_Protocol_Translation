@@ -113,12 +113,12 @@ Enable communication between an IPv4-only network and an IPv6-only network using
 
 ## Device Configuration
 
-| Device | Address | Gateway |
-|---------|---------|----------|
-| PC1 | 192.168.1.1/24 | 192.168.1.254 |
-| PC2 | 192.168.1.2/24 | 192.168.1.254 |
-| PC3 | 2000::1/64 | 2000::1000 |
-| PC4 | 2000::2/64 | 2000::1000 |
+| Device | Native Address | Target Translated Mapping | Default Gateway |
+| :--- | :--- | :--- | :--- |
+| **PC1** | `192.168.1.1/24` | `2001::1` | `192.168.1.254` |
+| **PC2** | `192.168.1.2/24` | `2001::2` | `192.168.1.254` |
+| **PC3** | `2000::1/64` | `192.168.2.1` | `2000::1000` |
+| **PC4** | `2000::2/64` | `192.168.2.2` | `2000::1000` |
 
 Linux hosts were configured using standard Linux networking commands (`ifconfig` and `route`). The complete commands are available in **configs/Linux_Commands.txt**.
 
