@@ -171,7 +171,7 @@ Upon processing by the NAT64 engine, the IPv4 headers are completely stripped, c
 
 A detailed technical report describing the implementation, router configurations, protocol analysis, and experimental results is available in:
 
-`report/Advanced_Internetworking_Report.pdf`
+[Advanced Internetworking Report](report/Advanced_Internetworking_Report.pdf)
 
 ---
 
