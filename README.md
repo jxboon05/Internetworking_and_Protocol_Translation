@@ -61,3 +61,25 @@ Enable seamless, transparent bidirectional communication between a legacy IPv4-o
   # PC1 configuration syntax
   sudo ifconfig eth0 192.168.1.1 netmask 255.255.255.0 up
   sudo route add default gw 192.168.1.254
+
+## ⚙️ Core Router Configurations
+
+### R1 NAT-PT Engine Script
+```cisco
+ipv6 unicast-routing
+!
+interface FastEthernet0/0
+ ip address 192.168.1.254 255.255.255.0
+ ipv6 nat
+ no shutdown
+!
+interface FastEthernet0/1
+ ipv6 address 2000::1000/64
+ ipv6 nat
+ no shutdown
+!
+ipv6 nat prefix 2001::/96
+ipv6 nat v4v6 source 192.168.1.1 2001::1
+ipv6 nat v4v6 source 192.168.1.2 2001::2
+ipv6 nat v6v4 source 2000::1 192.168.2.1
+ipv6 nat v6v4 source 2000::2 192.168.2.2
